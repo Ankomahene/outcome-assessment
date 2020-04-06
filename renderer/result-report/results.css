@@ -1,0 +1,23 @@
+.sort-icon {
+    width: 10px;
+    height: 10px;
+    fill: rgb(184, 181, 181);
+    cursor: pointer;
+}
+
+.active-sort {
+    fill: rgb(16, 160, 105);
+}
+
+.table-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.view-result-icon {
+    fill: rgb(152, 8, 248);
+}
+
+.delete-result-icon {
+    fill: rgb(248, 44, 8);
+}

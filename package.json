@@ -1,0 +1,31 @@
+{
+  "name": "outcome-assessment",
+  "version": "1.0.0",
+  "description": "A minimal desktop assessment app to track students progress",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "watch": "nodemon --exec electron ."
+  },
+  "repository": "",
+  "keywords": [
+    "Electron",
+    "outcome",
+    "assessment",
+    "progress",
+    "tracking"
+  ],
+  "author": "Shadrack",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^8.0.1"
+  },
+  "dependencies": {
+    "bootstrap-material-design": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "electron-window-state": "^5.0.3",
+    "jquery": "^3.4.1",
+    "music-metadata": "^6.3.4",
+    "popper.js": "^1.16.1"
+  }
+}

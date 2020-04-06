@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outcome Assessment</title>
+    <link rel="stylesheet" href="../../assets/bmd/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="./results.css">
+</head>
+
+<body>
+    <div class="container-fluid px-0">
+        <div class="main">
+            <div class="main__header mx-2 border-bottom py-3">
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="main__header-icon-wrapper mr-3">
+                        <img class="rounded-circle" src="../../assets/images/logo1.png" width="70px" alt="">
+                    </div>
+                    <p class="main__header-text h4 text-muted font-weight-bold pt-3">
+                        OUTCOME <span class="primary-color">ASSESSMENT</span>
+                    </p>
+                </div>
+
+                <div class="w-25">
+                    <a href="#">
+                        <button id="new-user" class="btn btn-raised btn-info bmd-btn-fab mx-1" data-toggle="tooltip"
+                            data-placement="right" title="Dashboard">
+                            <svg class="main__header-btn" style="fill: rgb(251, 253, 253);">
+                                <use xlink:href="../../assets/images/sprite.svg#icon-plus"></use>
+                            </svg>
+                        </button>
+                    </a>
+                    <a href="../control-panel/control-panel.html">
+                        <button id="new-user" class="btn btn-raised btn-secondary bmd-btn-fab mx-1"
+                            data-toggle="tooltip" data-placement="right" title="Control Panel">
+                            <svg class="main__header-btn">
+                                <use xlink:href="../../assets/images/sprite.svg#icon-equalizer"></use>
+                            </svg>
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <div id="new-student-section" class="container-fluid">
+                <div class="d-flex p-1 bg-info justify-content-center align-items-center">
+                    <p class="h3 text-light">STUDENTS RESULTS</p>
+                </div>
+                <div class="row pt-2 bg-light">
+                    <div class="col-2">
+                        <div class="input-group mb-3 w-100">
+                            <select class="custom-select" id="student-class">
+                                <option selected>--Student Class--</option>
+                                <option value="1">Class 1</option>
+                                <option value="2">Class 2</option>
+                                <option value="3">Class 3</option>
+                                <option value="4">Class 4</option>
+                                <option value="5">Class 5</option>
+                                <option value="6">Class 6</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-group mb-3 w-100">
+                            <select class="custom-select" id="student-class">
+                                <option selected>--Subject--</option>
+                                <option value="1">English</option>
+                                <option value="2">Mathematics</option>
+                                <option value="3">Integrated Science</option>
+                                <option value="4">Social Studies</option>
+                                <option value="5">Ghanaian Langage</option>
+                                <option value="6">ICT</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="input-group mb-3 w-100">
+                            <select class="custom-select" id="student-class">
+                                <option selected>--Academic Year--</option>
+                                <option value="1">2018/2019</option>
+                                <option value="2">2019/2020</option>
+                                <option value="3">2020/2021</option>
+                                <option value="4">2021/2022</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="input-group mb-3 w-100">
+                            <select class="custom-select" id="student-class">
+                                <option selected>--Term--</option>
+                                <option value="1">Term 1</option>
+                                <option value="2">Term 2</option>
+                                <option value="3">Term 3</option>
+                                <option value="4">Semester 1</option>
+                                <option value="5">Semester 2</option>
+                                <option value="6">Semester 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex justify-content-start align-items-center ml-5 mb-3">
+                            <div>
+                                <input id="student-id" type="text" class="form-control px-2"
+                                    placeholder="search name/id">
+                            </div>
+                            <div>
+                                <button id="search-student"
+                                    class="btn btn-primary btn-raised btn-outline btn-sm rounded-circle">
+                                    <svg class="table-icon" style="fill: rgb(255, 255, 255);">
+                                        <use xlink:href="../../assets/images/sprite.svg#icon-search">
+                                        </use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class=" row">
+                <div class="col-12">
+                    <!-- students table -->
+                    <div style="height:300px;overflow:auto;">
+                        <table id="playlists" class="table table-hover table-borderless table-striped border">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">
+                                        Class
+                                        <svg id="sort-by-class" class="sort-icon active-sort">
+                                            <use xlink:href="../../assets/images/sprite.svg#icon-circle-down">
+                                            </use>
+                                        </svg>
+                                    </th>
+                                    <th scope="col">
+                                        Gender
+                                        <svg id="sort-by-gender" class="sort-icon">
+                                            <use xlink:href="../../assets/images/sprite.svg#icon-circle-down">
+                                            </use>
+                                        </svg>
+                                    </th>
+                                    <th scope="col">
+                                        Subject
+                                        <svg id="sort-by-subject" class="sort-icon">
+                                            <use xlink:href="../../assets/images/sprite.svg#icon-circle-down">
+                                            </use>
+                                        </svg>
+                                    </th>
+                                    <th scope="col">
+                                        Score
+                                        <svg id="sort-by-score" class="sort-icon">
+                                            <use xlink:href="../../assets/images/sprite.svg#icon-circle-down">
+                                            </use>
+                                        </svg>
+                                    </th>
+                                    <th scope="col">
+                                        A/Y
+                                        <svg id="sort-by-academic-year" class="sort-icon">
+                                            <use xlink:href="../../assets/images/sprite.svg#icon-circle-down">
+                                            </use>
+                                        </svg>
+                                    </th>
+                                    <th scope="col">
+                                        T/S
+                                        <svg id="sort-by-term" class="sort-icon">
+                                            <use xlink:href="../../assets/images/sprite.svg#icon-circle-down">
+                                            </use>
+                                        </svg>
+                                    </th>
+                                    <th scope="col" class="text-center">Action
+                                        <small>(Edit-Delete)</small>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><small>BMCDC-234565-NA</small></td>
+                                    <td><small>Shadrack Ankomahene</small></td>
+                                    <td><small>1</small></td>
+                                    <td><small>Male</small></td>
+                                    <td><small>English</small></td>
+                                    <td><small>45</small></td>
+                                    <td><small>2019/2020</small></td>
+                                    <td><small>T2</small></td>
+                                    <td>
+                                        <button id="edit-student" class="btn mx-1" data-toggle="modal"
+                                            data-target="#editInfoWindow">
+                                            <svg class="view-result-icon table-icon">
+                                                <use xlink:href="../../assets/images/sprite.svg#icon-pencil">
+                                                </use>
+                                            </svg>
+                                        </button>
+                                        <button id="edit-student" class="btn mx-1" data-toggle="modal"
+                                            data-target="#deleteStudentConfirmWindow">
+                                            <svg class="delete-result-icon table-icon">
+                                                <use xlink:href="../../assets/images/sprite.svg#icon-bin">
+                                                </use>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><small>BMCDC-234565-NA</small></td>
+                                    <td><small>Shadrack Ankomahene</small></td>
+                                    <td><small>1</small></td>
+                                    <td><small>Male</small></td>
+                                    <td><small>English</small></td>
+                                    <td><small>45</small></td>
+                                    <td><small>2019/2020</small></td>
+                                    <td><small>T2</small></td>
+                                    <td>
+                                        <button id="edit-student" class="btn mx-1" data-toggle="modal"
+                                            data-target="#editInfoWindow">
+                                            <svg class="view-result-icon table-icon">
+                                                <use xlink:href="../../assets/images/sprite.svg#icon-pencil">
+                                                </use>
+                                            </svg>
+                                        </button>
+                                        <button id="edit-student" class="btn mx-1" data-toggle="modal"
+                                            data-target="#deleteStudentConfirmWindow">
+                                            <svg class="delete-result-icon table-icon">
+                                                <use xlink:href="../../assets/images/sprite.svg#icon-bin">
+                                                </use>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><small>BMCDC-234565-NA</small></td>
+                                    <td><small>Shadrack Ankomahene</small></td>
+                                    <td><small>1</small></td>
+                                    <td><small>Male</small></td>
+                                    <td><small>English</small></td>
+                                    <td><small>45</small></td>
+                                    <td><small>2019/2020</small></td>
+                                    <td><small>T2</small></td>
+                                    <td>
+                                        <button id="edit-student" class="btn mx-1" data-toggle="modal"
+                                            data-target="#editInfoWindow">
+                                            <svg class="view-result-icon table-icon">
+                                                <use xlink:href="../../assets/images/sprite.svg#icon-pencil">
+                                                </use>
+                                            </svg>
+                                        </button>
+                                        <button id="edit-student" class="btn mx-1" data-toggle="modal"
+                                            data-target="#deleteStudentConfirmWindow">
+                                            <svg class="delete-result-icon table-icon">
+                                                <use xlink:href="../../assets/images/sprite.svg#icon-bin">
+                                                </use>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><small>BMCDC-234565-NA</small></td>
+                                    <td><small>Shadrack Ankomahene</small></td>
+                                    <td><small>1</small></td>
+                                    <td><small>Male</small></td>
+                                    <td><small>English</small></td>
+                                    <td><small>45</small></td>
+                                    <td><small>2019/2020</small></td>
+                                    <td><small>T2</small></td>
+                                    <td>
+                                        <button id="edit-student" class="btn mx-1" data-toggle="modal"
+                                            data-target="#editInfoWindow">
+                                            <svg class="view-result-icon table-icon">
+                                                <use xlink:href="../../assets/images/sprite.svg#icon-pencil">
+                                                </use>
+                                            </svg>
+                                        </button>
+                                        <button id="edit-student" class="btn mx-1" data-toggle="modal"
+                                            data-target="#deleteStudentConfirmWindow">
+                                            <svg class="delete-result-icon table-icon">
+                                                <use xlink:href="../../assets/images/sprite.svg#icon-bin">
+                                                </use>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><small>BMCDC-234565-NA</small></td>
+                                    <td><small>Shadrack Ankomahene</small></td>
+                                    <td><small>1</small></td>
+                                    <td><small>Male</small></td>
+                                    <td><small>English</small></td>
+                                    <td><small>45</small></td>
+                                    <td><small>2019/2020</small></td>
+                                    <td><small>T2</small></td>
+                                    <td>
+                                        <button id="edit-student" class="btn mx-1" data-toggle="modal"
+                                            data-target="#editInfoWindow">
+                                            <svg class="view-result-icon table-icon">
+                                                <use xlink:href="../../assets/images/sprite.svg#icon-pencil">
+                                                </use>
+                                            </svg>
+                                        </button>
+                                        <button id="edit-student" class="btn mx-1" data-toggle="modal"
+                                            data-target="#deleteStudentConfirmWindow">
+                                            <svg class="delete-result-icon table-icon">
+                                                <use xlink:href="../../assets/images/sprite.svg#icon-bin">
+                                                </use>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end of students table -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- edit student info modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="editInfoWindow" tabindex="-1" role="dialog" aria-labelledby="editInfoWindow"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">
+                        <svg class="table-icon" style="fill: rgb(141, 138, 143);">
+                            <use xlink:href="../../assets/images/sprite.svg#icon-pencil">
+                            </use>
+                        </svg>
+                        Editing Details
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex p-2 bg-info justify-content-center align-items-center">
+                        <p class="h3 text-light">EDIT STUDENT DETAILS</p>
+                    </div>
+
+                    <div class="d-flex justify-content-start align-items-center my-2">
+                        <p class="px-4 pt-3 label">Student Name: </p>
+                        <div class="input-field">
+                            <input id="update-student-fullname" type="text" class="form-control px-2"
+                                placeholder="Full name">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-center my-2">
+                        <p class="px-4 pt-3 label">Student DoB: </p>
+                        <div class="input-field">
+                            <input id="update-student-age" type="date" class="form-control px-2"
+                                placeholder="date of birth">
+                        </div>
+                    </div>
+
+                    <!-- class -->
+                    <div class="d-flex justify-content-start align-items-center my-2">
+                        <p class="px-4 pt-3 label">Student Class: </p>
+                        <div class="input-group mb-3 input-field">
+                            <select class="custom-select px-3" id="update-student-class">
+                                <option selected>--Student Class--</option>
+                                <option value="1">Class 1</option>
+                                <option value="2">Class 2</option>
+                                <option value="3">Class 3</option>
+                                <option value="4">Class 4</option>
+                                <option value="5">Class 5</option>
+                                <option value="6">Class 6</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- end of class -->
+
+                    <!-- gender -->
+                    <form>
+                        <div class="d-flex justify-content-start align-items-center my-2">
+                            <p class="px-4 label">Student Gender: </p>
+                            <div class="mx-3">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="update-male" value="male" checked>
+                                    <span class="text-Secondary"> Male </span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="update-female" value="female">
+                                    Female
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- end of gender -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-outline mx-3" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success btn-outline">Update info</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of edit student info modal -->
+
+    <!-- delete student modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="deleteStudentConfirmWindow" tabindex="-1" role="dialog"
+        aria-labelledby="deleteStudentConfirmWindow" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <svg class="table-icon" style="fill: rgb(216, 74, 71);">
+                            <use xlink:href="../../assets/images/sprite.svg#icon-bin">
+                            </use>
+                        </svg>
+                        <span class="text-danger">Deleting Result</span>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p class="border-bottom py-2">Are you sure you want to Delete Result?</p>
+                    <div>ID: <span class="text-primary">BMCDC-234565-NA</span></div>
+                    <div>Name: Shadrack Ankomahene</div>
+                    <div>Subject: English</div>
+                    <div>Academic Year: 2019/2020</div>
+                    <div>Term: T2</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of delete student modal -->
+
+
+    <!-- print student info modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="printInfoWindow" tabindex="-1" role="dialog" aria-labelledby="printInfoWindow"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title ml-5" id="exampleModalLongTitle">
+                        <svg class="print-icon" style="fill: rgb(141, 138, 143); margin:auto;">
+                            <use xlink:href="../../assets/images/sprite.svg#icon-printer">
+                            </use>
+                        </svg>
+                        <span class="text-muted">Printing Info</span>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex p-2 bg-info justify-content-center align-items-center">
+                        <p class="h3 text-light">STUDENT DETAILS</p>
+                    </div>
+
+                    <div class="my-4">
+                        <span>Student ID: </span> <span
+                            class="bg-secondary rounded py-1 px-4 text-light">BMCDC-234565-NA</span>
+                    </div>
+                    <div class="border p-3">
+                        <div class="my-3">
+                            <div class="">
+                                <span class="font-weight-bold">Student Name: </span><span>Shadrack Ankomahene</span>
+                            </div>
+                        </div>
+                        <div class="my-3">
+                            <div class="">
+                                <span class="font-weight-bold">Student Class: </span><span>1</span>
+                            </div>
+                        </div>
+                        <div class="my-3">
+                            <div class="">
+                                <span class="font-weight-bold">Date of Birth: </span><span>11-09-2000</span>
+                            </div>
+                        </div>
+                        <div class="my-3">
+                            <div class="">
+                                <span class="font-weight-bold">Gender: </span><span>Male</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 mb-2">
+                        <textarea class="form-control" name="" id="" placeholder="director's Signature"></textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer mb-2">
+                    <button type="button" class="btn btn-secondary mx-3" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success btn-outline">
+                        <svg class="table-icon" style="fill: rgb(141, 138, 143); margin:auto;">
+                            <use xlink:href="../../assets/images/sprite.svg#icon-printer">
+                            </use>
+                        </svg>
+                        Print
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of print student info modal -->
+
+
+
+    <script>
+        let $ = require('jquery');
+    </script>
+    <script>
+        require('popper.js');
+    </script>
+    <script>
+        require('bootstrap-material-design');
+    </script>
+</body>
+
+</html>

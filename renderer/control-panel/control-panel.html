@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outcome Assessment</title>
+    <link rel="stylesheet" href="../../assets/bmd/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="./control-panel.css">
+</head>
+
+<body>
+    <div class="container-fluid px-0">
+        <div class="main">
+            <div class="main__header mx-2 border-bottom py-3">
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="main__header-icon-wrapper mr-3">
+                        <img class="rounded-circle" src="../../assets/images/logo1.png" width="70px" alt="">
+                    </div>
+                    <p class="main__header-text h4 text-muted font-weight-bold pt-3">
+                        OUTCOME <span class="primary-color">ASSESSMENT</span>
+                    </p>
+                </div>
+
+                <div class="w-25">
+                    <a href="../main.html">
+                        <button id="new-user" class="btn btn-raised btn-danger bmd-btn-fab mx-5" data-toggle="tooltip"
+                            data-placement="right" title="Logout">
+                            <svg class="main__header-btn">
+                                <use xlink:href="../../assets/images/sprite.svg#icon-switch"></use>
+                            </svg>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <!-- control panel -->
+            <div id="controls-section" class="d-flex justify-content-center align-items-center">
+                <div class="border rounded my-2 mx-auto w-50 p-4">
+                    <div class="text-center border-bottom py-1">
+                        <h5 class="text-muted">CONTROL PANEL</h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4 p-2">
+                            <a href="../new-student/new-student.html" class="btn rounded">
+                                <div class="control rounded text-center" style="border: 1px solid rgb(25, 97, 230);">
+                                    <svg class=" control-icon" style="fill: rgb(25, 97, 230);">
+                                        <use xlink:href="../../assets/images/sprite.svg#icon-user-plus"></use>
+                                    </svg>
+                                    <p class="small pt-3">New student</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-4 p-2">
+                            <a href="../view-students/view-students.html" class="btn rounded">
+                                <div class="control rounded text-center" style="border: 1px solid rgb(126, 15, 230);">
+                                    <svg class=" control-icon" style="fill: rgb(126, 15, 230);">
+                                        <use xlink:href="../../assets/images/sprite.svg#icon-user-check"></use>
+                                    </svg>
+                                    <p class="small pt-2">View students</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-4 p-2">
+                            <a href="../result-report/results.html" class="btn rounded">
+                                <div class="control rounded text-center" style="border: 1px solid rgb(63, 69, 80);">
+                                    <svg class=" control-icon" style="fill: rgb(63, 69, 80);">
+                                        <use xlink:href="../../assets/images/sprite.svg#icon-file-text"></use>
+                                    </svg>
+                                    <p class="small pt-2">Manage Report</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-4 p-2">
+                            <a href="./control-panel.html" class="btn rounded">
+                                <div class="control rounded text-center" style="border: 1px solid rgb(6, 185, 90);">
+                                    <svg class=" control-icon" style="fill: rgb(6, 185, 90);">
+                                        <use xlink:href="../../assets/images/sprite.svg#icon-user"></use>
+                                    </svg>
+                                    <p class="small pt-2">Manage Users</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-4 p-2">
+                            <a href="./control-panel.html" class="btn rounded">
+                                <div class="control rounded text-center" style="border: 1px solid rgb(190, 110, 5);">
+                                    <svg class=" control-icon" style="fill: rgb(190, 110, 5);">
+                                        <use xlink:href="../../assets/images/sprite.svg#icon-cogs"></use>
+                                    </svg>
+                                    <p class="small pt-2">System</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- add new user modal -->
+
+
+
+
+
+
+
+    <script>
+        let $ = require('jquery');
+    </script>
+    <script>
+        require('popper.js');
+    </script>
+    <script>
+        require('bootstrap-material-design');
+    </script>
+</body>
+
+</html>

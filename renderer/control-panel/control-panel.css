@@ -1,0 +1,16 @@
+#controls-section {
+    height: 450px;
+}
+
+.control {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    padding: 10px;
+}
+
+.control-icon {
+    width: 40px;
+    height: 40px;
+    fill: dimgray;
+}
